@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="src/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wireframe-to-HTML-CSS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+  </head>
+  
+  <body>
+    <div class="container">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" id="search-form" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              id="search-text-input"
+              placeholder="Enter City"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </div>
+    <div class="container">    
+        <div class="row">
+          <div class="col-6">
+            <h6 id="city"> Results for <strong>Denver,CO</strong> </h6>
+          </div>
+          <div class="col-2 text-start" id=tempUnit><strong>°F</strong>|C°</div>
+          <div class="col-2 col-md-4">
+            <div class="card">
+              <span class="border border-info-subtle"></span>
+              <div class="day-two card-body">
+                <h5 class="day-two text-center">Mon</h5>
+                <p class="day-two-icon text-center"><img src="images/partly-sunny.svg" width="50" alt="partly-sunny"></p>
+                <p class="day-two-temp text-center"><strong>40°</strong> 24°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-2 align-self-center">
+                <H1 class="current-day text-end">Currently</H1>
+                <h3 class="current-temp text-end" id=currenttempdisplay><strong>40°</strong></h3>
+            </div>
+            <div class="col-2 align-self-center">
+                <p class="current-icon text-start"> <img src="images/snow.svg" width="100" alt="light-mix-precip"> </p>
+            </div>
+          <div class="col-4 col-md-4 align-self-center text-center">
+            <p class="1h-base" id="currentWeather">
+              <strong>Weather</strong>
+              <br>Sunday 11:00AM
+              <br> Light mixture of precipitation. Overcast.
+            </p>
+          </div>
+          <div class="col-4 col-md-4">
+            <div class="card">
+              <span class="border border-info-subtle"></span>
+              <div class="day-three card-body">
+                <h5 class="day-three text-center">Tue</h5>
+                <p class="day-three-icon text-center"> <img src="images/partly-cloudy.svg" width="50" alt="partly-cloudy"> </p>
+                <p class="day-three-temp text-center">
+                  <strong>60°</strong> 31°
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" col-4 offset-md-8">
+            <div class="card">
+              <span class="border border-info-subtle"></span>
+              <div class="day-four card-body">
+                <h5 class="day-four text-center">Wed</h5>
+                <p class="day-four-icon text-center"> <img src="images/cloudy.svg" width="50"  alt="cloudy"> </p>
+                <p class="day-four-temp text-center">
+                  <strong>65°</strong> 36°
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-1 align-self-center">
+            <p class="fs-2">Next 5-hrs</p>
+            </div>
+          <div class="col-1 align-self-center">
+            <H5>Now</H5>
+            <p><img src="images/partly-sunny.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>27°F</p>   
+          </div>
+          <div class="col-1 align-self-center">
+            <H5>11:00 am</H5>
+            <p><img src="images/cloudy.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>36°F</p>   
+          </div>
+          <div class="col-1 align-self-center">
+            <H5>12:00 pm</H5>
+            <p><img src="images/cloudy.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>40°F</p>   
+          </div>
+          <div class="col-1 align-self-center">
+            <H5>1:00 pm</H5>
+            <p><img src="images/cloudy.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>42°F</p>   
+          </div><div class="col-1 align-self-center">
+            <H5>2:00 pm</H5>
+            <p><img src="images/cloudy.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>45°F</p>   
+          </div><div class="col-1 align-self-center">
+            <H5>3:00 pm</H5>
+            <p><img src="images/cloudy.svg" width=75 alt="partly-sunny-icon"></p>
+            <p>46°F</p>   
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <div class="card">
+              <span class="border border-info-subtle"></span>
+              <div class="day-five card-body">
+                <h5 class="day-five text-center">Thur</h5>
+                <p class="day-five-icon text-center"> <img src="images/snow.svg" width="50" alt="light-mix-precip"> </p>
+                <p class="day-five-temp text-center">
+                  <strong>44°</strong> 21°
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7 text-center">
+            <strong>What to wear:</strong> layers and sunscreen
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <div class="card">
+              <span class="border border-info-subtle"></span>
+              <div class="day-six card-body">
+                <h5 class="day-six text-center">Fri</h5>
+                <p class="day-six-icon text-center"> <img src="images/sunny.svg" width="50" alt="sunny"> </p>
+                <p class="day-six-temp text-center"><strong>44°</strong> 19°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+          crossorigin="anonymous"
+        ></script>
+        <script src="src/index.js"></script>
+      </nav>
+    </div>
+  </body>
+</html>
